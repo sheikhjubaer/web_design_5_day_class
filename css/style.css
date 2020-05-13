@@ -1,0 +1,494 @@
+/*Global CSS*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Sans+Pro:wght@700;900&display=swap');
+
+
+body {
+	font-family: 'Roboto', sans-serif;
+	position: relative;
+}
+
+.btn-top {
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	background: #ff0012;
+	color: white;
+	height: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
+	margin-bottom: 0 !important;
+}
+
+/*Banner Section CSS*/
+header {
+	
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)),url(../images/banner-bg.png);
+	
+    min-height: 650px;
+	
+    background-size: cover;
+	
+    background-position: center;
+}
+header .navbar {
+    padding-top: 25px;
+}
+header .navbar .nav-item{
+	margin: 0 18px; /*0 means top and bottoms margin is 0px*/
+}
+header .navbar .nav-item .nav-link{
+	color: #fff;
+	transition: 0.5s linear; /*We use transition for slow down the bottom hover of the link and it will take 0 to 0.5s*/
+}
+header .navbar .nav-item .nav-link:hover{
+	color: #fff;
+	border-bottom: 1px solid #fb414e;
+}
+header .navbar .nav-item.active .nav-link{
+    color: #fff;
+    border-bottom: 1px solid #fb414e;
+}
+
+.hero-area {
+	margin-top: 80px;
+	color: #fff;
+	text-align: center;
+}
+.hero-area h1{
+	font-weight: 700;
+	padding: 0 17%;
+	margin-bottom: 30px;
+}
+.hero-area p{
+	padding: 0 23%;
+	line-height: 1.7;
+	margin-bottom: 50px !important;
+}
+.hero-area .btn-cta{
+	color: #fff;
+	background: #fb414e;
+	padding: 7px 50px;
+	border-radius: 0;
+	margin: 0 10px;
+}
+.hero-area .btn-cta:hover {
+	background: #ff0012;
+}
+.hero-area .btn-ghost {
+	color: #fff;
+	border: 1px solid #fb414e;
+	padding: 7px 50px;
+	border-radius: 0;
+	margin: 0 10px;
+}
+.hero-area .btn-ghost:hover {
+	background: #ff0012;
+}
+
+
+
+/*Service Section CSS Starts*/
+
+.service {
+	padding-bottom: 80px;
+	margin-top: -80px;
+	overflow: hidden;
+}
+.service .box {
+	background: #202b30;
+	color: #fff;
+	padding: 15%;
+	/*transition: 0.5s linear;*/
+	position: relative;
+	z-index: 1;
+}
+.service .box img{
+	margin-bottom: 20px;
+}
+.service .box h5{
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+.service .box .white-line{
+	height: 3px;
+	background: #fff;
+	width: 50px;
+	margin-bottom: 30px;
+}
+.service .box p{}
+/* 1st way :
+.service .box:hover {
+	background: #fb414e;
+}*/
+
+/* 2nd way:
+.service .box::after {
+	content: "";
+	position: absolute;
+	background: #fb414e;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1; To send this created content box behind
+	transition: 0.5s linear;
+}
+.service .box:hover::after {
+	height: 100%;
+}*/
+
+/* 3rd way:
+.service .box::after {
+	content: "";
+	position: absolute;
+	background: #fb414e;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1; To send this created content box behind
+	transform: scale(0);
+	transition: 0.4s linear;
+}
+.service .box:hover::after {
+	transform: scale(1);
+}*/
+
+/*4th way*/
+.service .box::after {
+	content: "";
+	position: absolute;
+	background: #fb414e;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1; /*To send this created content box behind*/
+	transform: scale(0);
+	transform-origin: top left;
+	transition: 0.4s linear;
+}
+.service .box:hover::after {
+	transform: scale(1);
+	transform-origin: bottom right;
+}
+
+/*Works Section CSS*/
+
+.works {
+	padding: 80px 0;
+}
+.works h6{
+	text-align: center;
+	color: #fb414e;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+.works h2{
+	text-align: center;
+	font-weight: 700;
+	font-size: 40px;
+	margin-bottom: 30px;
+}
+.works .highlight{
+	color: #fb414e;
+}
+.works p{
+	text-align: center;
+	padding: 0 20%; /*Top and bottom 0, From 2 side its 20%*/
+    color: #838383;
+    margin-bottom: 60px !important;
+    /*font-size: 15px;*/
+}
+
+
+.works .box {
+	text-align: center;
+	margin-bottom: 40px;
+}
+.works .box img{
+	margin-bottom: 20px;
+}
+.works .box h3{
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+.works .box p{
+	padding: 0 5%;
+	margin-bottom: 0 !important;
+}
+
+
+
+/*About Sectin CSS*/
+
+.about {
+	background: #202b30;
+	color: #fff;
+	padding: 80px 0;
+}
+.about h3{
+	font-weight: 700;
+	font-size: 35px;
+	padding-right: 10%;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+.about p{
+	padding-right: 8%;
+	line-height: 1.7;
+	margin-bottom: 50px !important;
+}
+.about .btn-custom{
+	color: #fff;
+	border: 1px solid #fff;
+	padding: 7px 50px;
+	border-radius: 0;
+	position: relative;
+	z-index: 1;
+}
+.about .btn-custom::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fb414e;
+	transform: scale(0);
+	transform-origin: top left;
+	z-index: -1;
+	border: 1px solid #fb414e;
+	transition: 0.4s linear;
+}
+.about .btn-custom:hover::after {
+	transform: scale(1);
+	transform-origin: top right;
+}
+
+
+
+/*Feature Section CSS*/
+
+.feature {
+	padding: 80px 0 40px;
+}
+.feature .box {
+	margin-bottom: 40px;
+}
+.feature .box h5{
+	font-weight: 700;
+	margin-bottom: 12px;
+}
+.feature .box p{
+	line-height: 1.7;
+	color: #838383;
+	padding-right: 5%;
+}
+.feature .right {
+	margin-left: 5%;
+}
+.feature .right h3 {
+	font-size: 35px;
+	font-weight: 700;
+	padding-right: 10%;
+	margin-bottom: 40px;
+}
+.feature .right p {
+	color: #838383;
+	margin-bottom: 20px !important;
+	line-height: 1.7;
+}
+
+
+/*Branding Section CSS*/
+.branding {
+	background: #202b30;
+	padding: 80px 0;
+}
+.branding .image1{
+	margin-top: 28px;
+	margin-bottom: 60px;
+}
+.branding .image2{
+	text-align: right;
+}
+.branding .image3{
+}
+.branding .image4{
+	margin-top: 28px;
+}
+.branding h3 {
+	color: #fff;
+	font-size: 35px;
+	font-weight: 700;
+	text-align: right;
+	margin-bottom: 30px;
+	margin-top: 22px;
+}
+.branding p {
+	color: #838383;
+	text-align: right;
+	line-height: 1.7;
+	padding-left: 6%;
+}
+
+
+
+/*Design Section CSS*/
+/*.design {
+	background: #F8F8F8;
+}
+.design .box h3 {
+    margin-top: 80px;
+    font-size: 35px;
+    text-align: left;
+    padding-right: 20%;
+    margin-bottom: 30px;
+}
+.design .box p {
+	color: #838383;
+	padding-right: 6%;
+	text-align: left;
+	line-height: 1.7;
+}
+.design .image1 {
+    margin-top: 28px;
+	margin-bottom: 10px;
+}
+.design .image2 {
+	margin-top: 28px;
+	margin-bottom: 10px;
+}
+.design h5 {
+	color: #838383;
+}
+.design p {
+	margin-top: 15px;
+	color: #838383;
+}*/
+
+.design {
+	background: #F8F8F8;
+}
+.design .left-box {
+	padding: 50px 0;
+}
+.design h3 {
+	font-size: 35px;
+	font-weight: 700;
+	margin-bottom: 20px;
+	margin-top: 40px;
+}
+.design p {
+	color: #838383;
+	line-height: 1.7;
+	margin-bottom: 40px !important; 
+}
+.design .box{
+}
+.design .box img {
+}
+.design .box h5 {
+	margin-top: 20px;
+	font-size: 22px;
+	color: #838383; 
+}
+.design .box p {
+	margin-bottom: 0 !important;
+}
+
+.design .right-box {
+	min-height: 550px;
+	background: url(../images/woman_table.png);
+	background-size: cover;
+	background-position: center bottom;
+}
+
+/*Contact Section CSS*/
+.contact {
+	padding: 80px 0;
+}
+.contact h3 {
+	font-weight: 700;
+	font-size: 45px;
+	text-align: right;
+	padding-left: 10%;
+	margin-bottom: 30px;
+}
+.contact p {
+	color: #838383;
+	line-height: 1.7;
+	text-align: right;
+	margin-bottom: 30px !important;
+}
+.contact form {}
+.contact form .form-row{
+	margin-bottom: 20px;
+}
+.contact form .form-control{
+	border-radius: 0;
+	border: 1px solid;
+	padding: 7px;
+}
+.contact form .btnSubmit {
+	background: #fb414e;
+	border-radius: 0;
+	color: #fff;
+	padding: 10px;
+}
+.contact form .btnSubmit:hover {
+	background: #ff0012;
+}
+
+
+/*Footer Section CSS*/
+footer {
+	background: #202b30;
+	padding: 30px 0;
+}
+footer p {
+	color: #9aa7ac;
+	font-size: 14px;
+	text-align: center;
+}
+
+
+
+/*Responsive CSS*/
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .service .box {
+        padding: 8%;
+    }
+    }
+    .about h3 {
+        margin-top: 0px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero-area h1{
+	        padding: 0;
+    }
+    .hero-area p {
+        padding: 0 5%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+
+}
+
